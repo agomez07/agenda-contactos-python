@@ -1,7 +1,7 @@
 def agregar_contacto(contactos):
     while True:
-        nombre = input("Nómbre del contacto: ").strip()
-        telefono = input("Número de Teléfono: ").strip()
+        nombre = input("Nombre del contacto: ").strip()
+        telefono = input("Número de teléfono: ").strip()
 
         if not nombre or not telefono:
             print("Nombre y Teléfono no pueden estar vacíos. Por favor, inténtalo de nuevo.")
@@ -9,7 +9,7 @@ def agregar_contacto(contactos):
 
         for contacto in contactos:
             if contacto["telefono"] == telefono:
-                print("Contacto ya existente")
+                print("El contacto ya existe.")
                 return
   
         contacto = {
@@ -19,10 +19,14 @@ def agregar_contacto(contactos):
         contactos.append(contacto)
         break
 
-    print("Contácto guardado exitosamente.")
+    print("Contacto guardado exitosamente.")
 
 def eliminar_contacto(contactos):
-    telefono = input("Número de Teléfono del contacto a eliminar: ").strip()
+    if not contactos:
+        print("No hay contactos para eliminar.")
+        return
+    
+    telefono = input("Número de teléfono del contacto a eliminar: ").strip()
 
     for contacto in contactos:
         if contacto["telefono"] == telefono:
@@ -45,7 +49,7 @@ def editar_contacto(contactos):
         print("No hay contactos para editar.")
         return
     
-    telefono = input("Número de Teléfono del contacto a editar: ").strip()
+    telefono = input("Número de teléfono del contacto a editar: ").strip()
 
     if not telefono:
         print("El número de teléfono no puede estar vacío. Por favor, inténtalo de nuevo.")
@@ -74,7 +78,7 @@ def editar_contacto(contactos):
 
 def menu():
     print("--------------------------------------------")
-    print("          Agenda De Contactos AG")
+    print("          Agenda de Contactos AG")
     print("--------------------------------------------")
     print("1. AGREGAR CONTACTO")
     print("2. ELIMINAR CONTACTO")
