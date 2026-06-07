@@ -7,6 +7,7 @@ Sistema básico desarrollado en Python para gestionar contactos de forma sencill
 * Agregar contactos.
 * Mostrar contactos registrados.
 * Eliminar contactos por número de teléfono.
+* Editar contacto por número de teléfono
 * Validación de campos vacíos.
 * Validación de teléfonos duplicados.
 * Manejo de errores para entradas inválidas en el menú.
